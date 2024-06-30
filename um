@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+	
+	int total;
+
+	printf("DESCUBRA A ORDEM DOS SEUS NUMEROS\n");
+	printf("Primeiramente, digite quantos numeros voce quer organizar em ordem: ");
+	scanf("%i", &total);
+	printf("Beleza, agora digite o valor dos seus numeros: \n");
+	int numero[total];
+	
+	for(int i = 1; i <= total; i++) {
+	printf("Digite aqui o numero %i: ", i);
+	int j = i - 1;
+	scanf("%i", &numero[j]);
+}
+
+	printf("Massa! Aqui estao os seus numeros em ordem crescente: \n");
+	printf("{");
+	
+	for(int primeiro_numero = 0; primeiro_numero < total; primeiro_numero++) {
+	for(int ciclo = 0; ciclo < total; ciclo++) {
+	
+		if(numero[primeiro_numero] < numero[ciclo])  {
+		int numero_anterior = numero[primeiro_numero];			
+		numero[primeiro_numero] = numero[ciclo];
+		numero[ciclo] = numero_anterior;
+		}		
+	}		
+	}
+	for(int a = 0; a < total; a++) {
+		printf("%i ", numero[a]);
+	}	
+	printf("}\n");
+	printf("E aqui estao eles em ordem decrescente: \n");
+	printf("{");	
+	for(int a = total - 1; a >= 0; a--) {
+		printf("%i ", numero[a]);
+	}	
+	printf("}");	
+	return 0;
+}
